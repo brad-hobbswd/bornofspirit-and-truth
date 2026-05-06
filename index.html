@@ -25,7 +25,7 @@ box-sizing:border-box;
 /* ===== BODY ===== */
 
 body{
-background:#f7f3ee;
+background:#0b0b0b;
 font-family:'Inter',sans-serif;
 color:#f5f5f5;
 overflow-x:hidden;
@@ -45,6 +45,7 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:2rem;
+overflow:hidden;
 }
 
 /* ===== NAVBAR ===== */
@@ -173,9 +174,10 @@ transform:translateX(-50%);
 font-size:.8rem;
 letter-spacing:.2em;
 opacity:.7;
+animation:bounce 2s infinite;
 }
 
-/* ===== ANIMATION ===== */
+/* ===== ANIMATIONS ===== */
 
 @keyframes fadeUp{
 
@@ -187,6 +189,18 @@ transform:translateY(40px);
 to{
 opacity:1;
 transform:translateY(0);
+}
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+transform:translateX(-50%) translateY(0);
+}
+
+50%{
+transform:translateX(-50%) translateY(-8px);
 }
 
 }
@@ -232,6 +246,16 @@ padding:1.5rem;
 font-size:1.6rem;
 }
 
+.hero-buttons{
+flex-direction:column;
+width:100%;
+}
+
+.btn{
+width:100%;
+text-align:center;
+}
+
 }
 
 </style>
@@ -251,7 +275,7 @@ Born of the Spirit and Truth
 <a href="index.html">Home</a>
 <a href="purpose.html">Purpose</a>
 <a href="chapters.html">Chapters</a>
-<a href="reflections.html">Reflection</a>
+<a href="reflection.html">Reflection</a>
 </div>
 
 </nav>
@@ -293,14 +317,20 @@ SCROLL
 </div>
 
 </section>
+
+<!-- ===== FOOTER ===== -->
+
 <div id="footer-placeholder"></div>
 
 <script>
+
 fetch('footer.html')
 .then(response => response.text())
 .then(data => {
 document.getElementById('footer-placeholder').innerHTML = data;
 });
+
 </script>
+
 </body>
 </html>
