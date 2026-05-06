@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 6 | Born of the Spirit and Truth</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== RESET ===== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* ===== BODY ===== */
+
+body{
+background:#0f0f0f;
+font-family:'Inter',sans-serif;
+color:#f5f5f5;
+overflow-x:hidden;
+line-height:2;
+}
+
+/* ===== BACKGROUND ===== */
+
+.background{
+position:fixed;
+inset:0;
+background:
+linear-gradient(rgba(8,8,8,.88),rgba(8,8,8,.94)),
+url('banner.jpg') center center/cover no-repeat;
+z-index:-2;
+}
+
+.background::after{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at top left,rgba(240,215,166,.10),transparent 35%),
+radial-gradient(circle at bottom right,rgba(255,255,255,.04),transparent 40%);
+}
+
+/* ===== PROGRESS ===== */
+
+.progress-wrap{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:3px;
+z-index:2000;
+}
+
+.progress-bar{
+height:100%;
+width:0%;
+background:#f0d7a6;
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:1.2rem 3rem;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(18px);
+background:rgba(15,15,15,.18);
+border-bottom:1px solid rgba(255,255,255,.08);
+z-index:999;
+}
+
+.logo{
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+font-weight:600;
+letter-spacing:.05em;
+color:#fff;
+}
+
+.nav-links{
+display:flex;
+gap:2rem;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#f5f5f5;
+font-size:.92rem;
+letter-spacing:.08em;
+font-weight:300;
+transition:.3s ease;
+}
+
+.nav-links a:hover{
+opacity:.7;
+}
+
+/* ===== PAGE ===== */
+
+.page{
+padding:10rem 2rem 6rem;
+}
+
+/* ===== HERO ===== */
+
+.chapter-hero{
+max-width:950px;
+margin:auto;
+text-align:center;
+margin-bottom:6rem;
+animation:fadeUp 1.2s ease;
+}
+
+.chapter-label{
+display:inline-block;
+margin-bottom:1rem;
+font-size:.8rem;
+letter-spacing:.3em;
+color:#f0d7a6;
+font-weight:500;
+}
+
+.chapter-hero h1{
+font-family:'Cormorant Garamond',serif;
+font-size:5rem;
+font-weight:500;
+line-height:1;
+margin-bottom:2rem;
+}
+
+.chapter-subtitle{
+font-size:1rem;
+letter-spacing:.12em;
+color:rgba(255,255,255,.7);
+}
+
+/* ===== CONTENT ===== */
+
+.content{
+max-width:860px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:2.4rem;
+animation:fadeUp 1.5s ease;
+}
+
+.content p{
+font-size:1.05rem;
+font-weight:300;
+line-height:2.2;
+color:rgba(255,255,255,.94);
+}
+
+/* ===== SCRIPTURE BLOCK ===== */
+
+.scripture{
+margin:1rem 0;
+padding:2.5rem;
+border-radius:28px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
+text-align:center;
+}
+
+.scripture span{
+display:block;
+margin-bottom:1rem;
+font-size:.82rem;
+letter-spacing:.25em;
+color:#f0d7a6;
+}
+
+.scripture p{
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+line-height:1.6;
+color:#fff;
+}
+
+/* ===== NAVIGATION ===== */
+
+.chapter-navigation{
+margin-top:5rem;
+display:flex;
+justify-content:space-between;
+gap:1rem;
+flex-wrap:wrap;
+}
+
+.chapter-btn{
+padding:1rem 2rem;
+border-radius:50px;
+text-decoration:none;
+font-size:.92rem;
+letter-spacing:.08em;
+transition:.35s ease;
+}
+
+.btn-secondary{
+border:1px solid rgba(255,255,255,.25);
+color:#fff;
+background:rgba(255,255,255,.04);
+}
+
+.btn-secondary:hover{
+background:rgba(255,255,255,.1);
+}
+
+.btn-primary{
+background:#f0d7a6;
+color:#111;
+}
+
+.btn-primary:hover{
+background:#fff;
+transform:translateY(-2px);
+}
+
+/* ===== ANIMATION ===== */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:900px){
+
+.navbar{
+padding:1rem 1.5rem;
+}
+
+.nav-links{
+display:none;
+}
+
+.page{
+padding:8rem 1.5rem 5rem;
+}
+
+.chapter-hero h1{
+font-size:3.5rem;
+}
+
+.content p{
+font-size:1rem;
+line-height:2;
+}
+
+.scripture p{
+font-size:1.5rem;
+}
+
+}
+
+@media(max-width:600px){
+
+.chapter-hero h1{
+font-size:2.7rem;
+}
+
+.scripture{
+padding:2rem 1.5rem;
+}
+
+.scripture p{
+font-size:1.25rem;
+line-height:1.8;
+}
+
+.chapter-navigation{
+flex-direction:column;
+}
+
+.chapter-btn{
+width:100%;
+text-align:center;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- ===== PROGRESS ===== -->
+
+<div class="progress-wrap">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+
+<!-- ===== BACKGROUND ===== -->
+
+<div class="background"></div>
+
+<!-- ===== NAVBAR ===== -->
+
+<nav class="navbar">
+
+<div class="logo">
+Born of the Spirit and Truth
+</div>
+
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="purpose.html">Purpose</a>
+<a href="chapters.html">Chapters</a>
+<a href="reflection.html">Reflection</a>
+</div>
+
+</nav>
+
+<!-- ===== PAGE ===== -->
+
+<section class="page">
+
+<!-- ===== HERO ===== -->
+
+<div class="chapter-hero">
+
+<span class="chapter-label">
+CHAPTER 6
+</span>
+
+<h1>
+The Early Church and the Church Today
+</h1>
+
+<div class="chapter-subtitle">
+The same Spirit that filled the early Church continues working today.
+</div>
+
+</div>
+
+<!-- ===== CONTENT ===== -->
+
+<div class="content">
+
+<p>
+The Church did not begin as an institution, building, or system of beliefs. The Church began as a living body filled with the Spirit of Jesus. Acts 2 presents a community transformed through divine presence rather than human organization. The same Spirit who filled believers in Jerusalem continues forming the Church across generations, cultures, and nations today.
+</p>
+
+<p>
+The early Church lived with expectation. Believers gathered together in prayerful unity, trusting Jesus to fulfill His promise. When the Holy Ghost filled that gathering, fear dissolved while boldness emerged. Ordinary men and women became powerful witnesses through the Spirit’s presence and authority.
+</p>
+
+<div class="scripture">
+
+<span>
+SPIRITUAL FOUNDATION
+</span>
+
+<p>
+The Church remains alive because Jesus continues living within His people through the Holy Ghost.
+</p>
+
+</div>
+
+<p>
+Acts 2:42 describes believers continuing steadfastly in doctrine, fellowship, breaking of bread, and prayer. These practices did not exist merely as religious routine. These practices reflected hearts transformed through relationship with Jesus and empowered through the Spirit.
+</p>
+
+<p>
+Modern believers often wonder whether the Church today still reflects the Church described throughout Acts. Scripture consistently reveals continuity rather than separation. The same Spirit fills believers today. The same gospel transforms lives today. The same Jesus reigns today.
+</p>
+
+<p>
+Cultural expressions may differ across generations and locations, though spiritual substance remains unchanged. The Church exists wherever believers gather together in the name of Jesus while remaining filled with His Spirit and submitted to His Word.
+</p>
+
+<p>
+The early Church depended completely upon the Spirit rather than human strength, intellect, or personal ambition. Guidance flowed through prayer. Direction developed through obedience. Growth emerged through faithfulness rather than performance driven success.
+</p>
+
+<p>
+Unity defined the early Church. Unity did not require identical backgrounds or experiences. Unity flowed through shared surrender toward Jesus. Diversity strengthened the body rather than dividing believers because love remained central through the Spirit’s work.
+</p>
+
+<p>
+Persecution tested the early Church repeatedly, though opposition strengthened faith rather than destroying faith. Believers relied more deeply upon prayer, fellowship, and the guidance of the Spirit. Boldness increased while miracles accompanied obedience and faithful witness.
+</p>
+
+<p>
+Modern challenges often appear through distraction, division, fear, confusion, and spiritual compromise. The solution remains unchanged. Prayer restores focus. Scripture provides clarity. The Spirit supplies strength, wisdom, and direction.
+</p>
+
+<p>
+This chapter reminds readers that believers today belong to the same spiritual lineage as the early Church. Spiritual inheritance flows through the Holy Ghost rather than denominational identity. Faith connects generations through shared relationship with Jesus and obedience toward truth.
+</p>
+
+<p>
+The early Church carried responsibility alongside power. Spiritual gifts required humility while authority required servant hearted leadership. These same principles remain essential for the Church today because true spiritual maturity always reflects the character of Jesus.
+</p>
+
+<p>
+Community remains vital for spiritual growth. Encouragement strengthens perseverance. Accountability nurtures maturity. Fellowship deepens joy while worship renews focus upon God’s presence. The Church functions most beautifully when believers walk together through Spirit filled unity and love.
+</p>
+
+<p>
+The Church today stands not as replacement of the early Church but as continuation of the same Spirit filled body established through Acts. Jesus continues leading His Church through the Holy Ghost while believers continue walking forward through surrender, obedience, and faith.
+</p>
+
+<!-- ===== NAVIGATION ===== -->
+
+<div class="chapter-navigation">
+
+<a href="chapter5.html" class="chapter-btn btn-secondary">
+← Previous Chapter
+</a>
+
+<a href="chapter7.html" class="chapter-btn btn-primary">
+Next Chapter →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== SCRIPT ===== -->
+
+<script>
+
+window.addEventListener('scroll', () => {
+
+const scrollTop = document.documentElement.scrollTop;
+const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+const progress = (scrollTop / scrollHeight) * 100;
+
+document.getElementById('progressBar').style.width = progress + '%';
+
+});
+
+</script>
+
+</body>
+</html>
