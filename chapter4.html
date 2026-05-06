@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 4 | Born of the Spirit and Truth</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== RESET ===== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* ===== BODY ===== */
+
+body{
+background:#0f0f0f;
+font-family:'Inter',sans-serif;
+color:#f5f5f5;
+overflow-x:hidden;
+line-height:2;
+}
+
+/* ===== BACKGROUND ===== */
+
+.background{
+position:fixed;
+inset:0;
+background:
+linear-gradient(rgba(8,8,8,.88),rgba(8,8,8,.94)),
+url('banner.jpg') center center/cover no-repeat;
+z-index:-2;
+}
+
+.background::after{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at top left,rgba(240,215,166,.10),transparent 35%),
+radial-gradient(circle at bottom right,rgba(255,255,255,.04),transparent 40%);
+}
+
+/* ===== PROGRESS ===== */
+
+.progress-wrap{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:3px;
+z-index:2000;
+}
+
+.progress-bar{
+height:100%;
+width:0%;
+background:#f0d7a6;
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:1.2rem 3rem;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(18px);
+background:rgba(15,15,15,.18);
+border-bottom:1px solid rgba(255,255,255,.08);
+z-index:999;
+}
+
+.logo{
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+font-weight:600;
+letter-spacing:.05em;
+color:#fff;
+}
+
+.nav-links{
+display:flex;
+gap:2rem;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#f5f5f5;
+font-size:.92rem;
+letter-spacing:.08em;
+font-weight:300;
+transition:.3s ease;
+}
+
+.nav-links a:hover{
+opacity:.7;
+}
+
+/* ===== PAGE ===== */
+
+.page{
+padding:10rem 2rem 6rem;
+}
+
+/* ===== HERO ===== */
+
+.chapter-hero{
+max-width:950px;
+margin:auto;
+text-align:center;
+margin-bottom:6rem;
+animation:fadeUp 1.2s ease;
+}
+
+.chapter-label{
+display:inline-block;
+margin-bottom:1rem;
+font-size:.8rem;
+letter-spacing:.3em;
+color:#f0d7a6;
+font-weight:500;
+}
+
+.chapter-hero h1{
+font-family:'Cormorant Garamond',serif;
+font-size:5rem;
+font-weight:500;
+line-height:1;
+margin-bottom:2rem;
+}
+
+.chapter-subtitle{
+font-size:1rem;
+letter-spacing:.12em;
+color:rgba(255,255,255,.7);
+}
+
+/* ===== CONTENT ===== */
+
+.content{
+max-width:860px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:2.4rem;
+animation:fadeUp 1.5s ease;
+}
+
+.content p{
+font-size:1.05rem;
+font-weight:300;
+line-height:2.2;
+color:rgba(255,255,255,.94);
+}
+
+/* ===== SCRIPTURE BLOCK ===== */
+
+.scripture{
+margin:1rem 0;
+padding:2.5rem;
+border-radius:28px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
+text-align:center;
+}
+
+.scripture span{
+display:block;
+margin-bottom:1rem;
+font-size:.82rem;
+letter-spacing:.25em;
+color:#f0d7a6;
+}
+
+.scripture p{
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+line-height:1.6;
+color:#fff;
+}
+
+/* ===== NAVIGATION ===== */
+
+.chapter-navigation{
+margin-top:5rem;
+display:flex;
+justify-content:space-between;
+gap:1rem;
+flex-wrap:wrap;
+}
+
+.chapter-btn{
+padding:1rem 2rem;
+border-radius:50px;
+text-decoration:none;
+font-size:.92rem;
+letter-spacing:.08em;
+transition:.35s ease;
+}
+
+.btn-secondary{
+border:1px solid rgba(255,255,255,.25);
+color:#fff;
+background:rgba(255,255,255,.04);
+}
+
+.btn-secondary:hover{
+background:rgba(255,255,255,.1);
+}
+
+.btn-primary{
+background:#f0d7a6;
+color:#111;
+}
+
+.btn-primary:hover{
+background:#fff;
+transform:translateY(-2px);
+}
+
+/* ===== ANIMATION ===== */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:900px){
+
+.navbar{
+padding:1rem 1.5rem;
+}
+
+.nav-links{
+display:none;
+}
+
+.page{
+padding:8rem 1.5rem 5rem;
+}
+
+.chapter-hero h1{
+font-size:3.5rem;
+}
+
+.content p{
+font-size:1rem;
+line-height:2;
+}
+
+.scripture p{
+font-size:1.5rem;
+}
+
+}
+
+@media(max-width:600px){
+
+.chapter-hero h1{
+font-size:2.7rem;
+}
+
+.scripture{
+padding:2rem 1.5rem;
+}
+
+.scripture p{
+font-size:1.25rem;
+line-height:1.8;
+}
+
+.chapter-navigation{
+flex-direction:column;
+}
+
+.chapter-btn{
+width:100%;
+text-align:center;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- ===== PROGRESS ===== -->
+
+<div class="progress-wrap">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+
+<!-- ===== BACKGROUND ===== -->
+
+<div class="background"></div>
+
+<!-- ===== NAVBAR ===== -->
+
+<nav class="navbar">
+
+<div class="logo">
+Born of the Spirit and Truth
+</div>
+
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="purpose.html">Purpose</a>
+<a href="chapters.html">Chapters</a>
+<a href="reflection.html">Reflection</a>
+</div>
+
+</nav>
+
+<!-- ===== PAGE ===== -->
+
+<section class="page">
+
+<!-- ===== HERO ===== -->
+
+<div class="chapter-hero">
+
+<span class="chapter-label">
+CHAPTER 4
+</span>
+
+<h1>
+Revelation and Responsibility
+</h1>
+
+<div class="chapter-subtitle">
+Truth invites the heart into deeper obedience, growth, and alignment with Jesus.
+</div>
+
+</div>
+
+<!-- ===== CONTENT ===== -->
+
+<div class="content">
+
+<p>
+Revelation carries weight. Whenever God opens understanding, something within the soul shifts. Truth does more than inform the mind. Truth calls the heart forward. Scripture consistently reveals that revelation brings responsibility, not as burden, yet as invitation into deeper alignment with God’s will.
+</p>
+
+<p>
+Jesus taught this principle clearly. Luke 12:48 explains that greater understanding brings greater accountability. This statement does not threaten the believer. This statement reveals God’s fairness. God never demands response from knowledge never received. God responds to sincerity and obedience within the light given.
+</p>
+
+<div class="scripture">
+
+<span>
+SPIRITUAL FOUNDATION
+</span>
+
+<p>
+Revelation arrives as a gift from God, though every gift carries purpose and invitation toward deeper obedience.
+</p>
+
+</div>
+
+<p>
+The early Church experienced this progression firsthand. Before Pentecost, the disciples believed in Jesus and followed Him faithfully. After Pentecost, responsibility expanded through Spirit filled empowerment. Knowledge transformed into mission. Understanding produced obedience. Revelation required action.
+</p>
+
+<p>
+Revelation never arrives randomly. God reveals truth when the heart stands ready to receive and respond. Hunger invites understanding while humility creates space for clarity. Scripture consistently shows God revealing Himself to sincere seekers rather than self satisfied hearts.
+</p>
+
+<p>
+Many believers experience tension after receiving deeper understanding concerning Spirit baptism and the Oneness of Jesus. Family history, previous teachings, and cherished experiences may seem to collide with newly revealed truth. Such tension reflects growth rather than failure.
+</p>
+
+<p>
+Responsibility never requires judgment toward others. Responsibility first calls believers toward personal obedience and transformation. Revelation begins inwardly before outward witness develops. Compassion must accompany truth just as mercy accompanies justice within the character of God.
+</p>
+
+<p>
+Acts 17:30 reveals God’s patience toward seasons of ignorance while calling hearts forward once truth becomes visible. Mercy and justice walk together perfectly within Jesus. Compassion never weakens truth, and truth never removes compassion.
+</p>
+
+<p>
+This chapter speaks directly toward concerns involving loved ones who may never have received fuller revelation. God alone sees every circumstance, motive, opportunity, and response to available understanding. Peace develops when trust rests within God’s perfect character rather than human conclusions.
+</p>
+
+<p>
+Responsibility expresses itself through obedience rather than perfection. Growth unfolds through consistent surrender. Revelation invites deeper prayer, deeper study, stronger faithfulness, and greater love toward God and others.
+</p>
+
+<p>
+The Spirit remains essential throughout this process. Revelation without the Spirit often produces pride, confusion, or fear. Revelation guided by the Spirit produces humility, peace, wisdom, and clarity. Growth remains relational rather than mechanical because relationship with Jesus remains central.
+</p>
+
+<p>
+This chapter encourages readers to receive revelation gently and faithfully. Allow truth to shape prayer life, refine daily choices, and deepen compassion toward others. Knowledge expressed through love reflects Jesus more clearly than knowledge expressed through argument.
+</p>
+
+<p>
+Revelation opens the door toward greater intimacy with God. Responsibility walks through that door through obedience, surrender, and trust. God faithfully supplies strength for every step taken toward truth and Spirit led life.
+</p>
+
+<!-- ===== NAVIGATION ===== -->
+
+<div class="chapter-navigation">
+
+<a href="chapter3.html" class="chapter-btn btn-secondary">
+← Previous Chapter
+</a>
+
+<a href="chapter5.html" class="chapter-btn btn-primary">
+Next Chapter →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== SCRIPT ===== -->
+
+<script>
+
+window.addEventListener('scroll', () => {
+
+const scrollTop = document.documentElement.scrollTop;
+const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+const progress = (scrollTop / scrollHeight) * 100;
+
+document.getElementById('progressBar').style.width = progress + '%';
+
+});
+
+</script>
+
+</body>
+</html>
