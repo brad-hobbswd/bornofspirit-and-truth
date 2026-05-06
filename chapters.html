@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapters | Born of the Spirit and Truth</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== RESET ===== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* ===== BODY ===== */
+
+body{
+background:#0f0f0f;
+font-family:'Inter',sans-serif;
+color:#f5f5f5;
+overflow-x:hidden;
+}
+
+/* ===== BACKGROUND ===== */
+
+.background{
+position:fixed;
+inset:0;
+background:
+linear-gradient(rgba(10,10,10,.86),rgba(10,10,10,.92)),
+url('banner.jpg') center center/cover no-repeat;
+z-index:-2;
+}
+
+.background::after{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at top left,rgba(240,215,166,.08),transparent 35%),
+radial-gradient(circle at bottom right,rgba(255,255,255,.04),transparent 40%);
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:1.2rem 3rem;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(18px);
+background:rgba(15,15,15,.18);
+border-bottom:1px solid rgba(255,255,255,.08);
+z-index:999;
+}
+
+.logo{
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+font-weight:600;
+letter-spacing:.05em;
+color:#fff;
+}
+
+.nav-links{
+display:flex;
+gap:2rem;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#f5f5f5;
+font-size:.92rem;
+font-weight:300;
+letter-spacing:.08em;
+transition:.3s ease;
+}
+
+.nav-links a:hover{
+opacity:.7;
+}
+
+/* ===== PAGE ===== */
+
+.page{
+padding:10rem 2rem 6rem;
+max-width:1300px;
+margin:auto;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+text-align:center;
+margin-bottom:6rem;
+animation:fadeUp 1.2s ease;
+}
+
+.hero-label{
+display:inline-block;
+margin-bottom:1rem;
+font-size:.8rem;
+letter-spacing:.3em;
+color:#f0d7a6;
+font-weight:500;
+}
+
+.hero h1{
+font-family:'Cormorant Garamond',serif;
+font-size:5rem;
+font-weight:500;
+line-height:1;
+margin-bottom:2rem;
+}
+
+.hero p{
+max-width:720px;
+margin:auto;
+font-size:1.05rem;
+line-height:2;
+font-weight:300;
+color:rgba(255,255,255,.9);
+}
+
+/* ===== GRID ===== */
+
+.chapter-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:2rem;
+}
+
+/* ===== CARD ===== */
+
+.chapter-card{
+position:relative;
+padding:2.5rem;
+border-radius:28px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
+overflow:hidden;
+transition:.45s ease;
+animation:fadeUp 1.5s ease;
+}
+
+.chapter-card:hover{
+transform:translateY(-6px);
+background:rgba(255,255,255,.08);
+}
+
+.chapter-number{
+font-size:.8rem;
+letter-spacing:.25em;
+margin-bottom:1rem;
+color:#f0d7a6;
+font-weight:500;
+}
+
+.chapter-card h2{
+font-family:'Cormorant Garamond',serif;
+font-size:2.3rem;
+font-weight:500;
+line-height:1.1;
+margin-bottom:1.5rem;
+}
+
+.chapter-card p{
+font-size:.98rem;
+line-height:1.9;
+font-weight:300;
+color:rgba(255,255,255,.88);
+margin-bottom:2rem;
+}
+
+/* ===== BUTTON ===== */
+
+.chapter-btn{
+display:inline-flex;
+align-items:center;
+gap:.5rem;
+text-decoration:none;
+color:#f0d7a6;
+font-size:.92rem;
+letter-spacing:.08em;
+transition:.3s ease;
+}
+
+.chapter-btn:hover{
+opacity:.7;
+transform:translateX(3px);
+}
+
+/* ===== ANIMATION ===== */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:900px){
+
+.navbar{
+padding:1rem 1.5rem;
+}
+
+.nav-links{
+display:none;
+}
+
+.page{
+padding:8rem 1.5rem 5rem;
+}
+
+.hero h1{
+font-size:3.5rem;
+}
+
+.hero p{
+font-size:1rem;
+line-height:1.9;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.chapter-card{
+padding:2rem;
+}
+
+.chapter-card h2{
+font-size:1.9rem;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- ===== BACKGROUND ===== -->
+
+<div class="background"></div>
+
+<!-- ===== NAVBAR ===== -->
+
+<nav class="navbar">
+
+<div class="logo">
+Born of the Spirit and Truth
+</div>
+
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="purpose.html">Purpose</a>
+<a href="chapters.html">Chapters</a>
+<a href="reflection.html">Reflection</a>
+</div>
+
+</nav>
+
+<!-- ===== PAGE ===== -->
+
+<section class="page">
+
+<!-- ===== HERO ===== -->
+
+<div class="hero">
+
+<span class="hero-label">
+TABLE OF CONTENTS
+</span>
+
+<h1>
+Begin the Journey
+</h1>
+
+<p>
+Each chapter invites deeper understanding, reflection, and Spirit led growth through Scripture, revelation, and relationship with Jesus.
+</p>
+
+</div>
+
+<!-- ===== CHAPTER GRID ===== -->
+
+<div class="chapter-grid">
+
+<!-- ===== CHAPTER 1 ===== -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 1
+</div>
+
+<h2>
+Why This Question Matters
+</h2>
+
+<p>
+Explore why questions surrounding salvation, Spirit baptism, revelation, and obedience remain deeply important within the life of every sincere believer.
+</p>
+
+<a href="chapter1.html" class="chapter-btn">
+Read Chapter →
+</a>
+
+</div>
+
+<!-- ===== CHAPTER 2 ===== -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 2
+</div>
+
+<h2>
+Conviction and the Stirring of New Life
+</h2>
+
+<p>
+Discover how conviction awakens the soul, draws hearts toward repentance, and prepares believers for transformation through the Spirit.
+</p>
+
+<a href="chapter2.html" class="chapter-btn">
+Read Chapter →
+</a>
+
+</div>
+
+<!-- ===== CHAPTER 3 ===== -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 3
+</div>
+
+<h2>
+The Holy Ghost and the Evidence of New Life
+</h2>
+
+<p>
+Understand the promise of the Holy Ghost, the biblical evidence of Spirit baptism, and the transforming power of God dwelling within believers.
+</p>
+
+<a href="chapter3.html" class="chapter-btn">
+Read Chapter →
+</a>
+
+</div>
+
+<!-- ===== CHAPTER 4 ===== -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 4
+</div>
+
+<h2>
+Revelation and Responsibility
+</h2>
+
+<p>
+Learn how revelation shapes accountability, obedience, growth, and deeper alignment with the truth revealed through Jesus.
+</p>
+
+<a href="chapter4.html" class="chapter-btn">
+Read Chapter →
+</a>
+
+</div>
+
+<!-- ===== CHAPTER 5 ===== -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 5
+</div>
+
+<h2>
+Mercy, Justice, and Peace Concerning Loved Ones
+</h2>
+
+<p>
+Find peace through understanding God’s mercy, justice, compassion, and perfect knowledge concerning those we love deeply.
+</p>
+
+<a href="chapter5.html" class="chapter-btn">
+Read Chapter →
+</a>
+
+</div>
+
+<!-- ===== CHAPTER 6 ===== -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 6
+</div>
+
+<h2>
+The Early Church and the Church Today
+</h2>
+
+<p>
+See how the Spirit filled Church of Acts continues today through believers walking in truth, unity, and the power of Jesus.
+</p>
+
+<a href="chapter6.html" class="chapter-btn">
+Read Chapter →
+</a>
+
+</div>
+
+<!-- ===== CHAPTER 7 ===== -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 7
+</div>
+
+<h2>
+Daily Life Filled With the Holy Ghost
+</h2>
+
+<p>
+Experience how the Holy Ghost transforms everyday living through guidance, peace, discernment, prayer, and relationship with Jesus.
+</p>
+
+<a href="chapter7.html" class="chapter-btn">
+Read Chapter →
+</a>
+
+</div>
+
+<!-- ===== CHAPTER 8 ===== -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 8
+</div>
+
+<h2>
+Grace, Knowledge, and Accountability
+</h2>
+
+<p>
+Explore how grace sustains growth while revelation invites believers into greater maturity, obedience, and spiritual confidence.
+</p>
+
+<a href="chapter8.html" class="chapter-btn">
+Read Chapter →
+</a>
+
+</div>
+
+<!-- ===== CHAPTER 9 ===== -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 9
+</div>
+
+<h2>
+Discernment and the Evidence of a Living Spirit
+</h2>
+
+<p>
+Learn how discernment develops through intimacy with Jesus and how spiritual fruit reveals the ongoing work of the Spirit.
+</p>
+
+<a href="chapter9.html" class="chapter-btn">
+Read Chapter →
+</a>
+
+</div>
+
+<!-- ===== CHAPTER 10 ===== -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 10
+</div>
+
+<h2>
+Assurance, Hope, and Resting in Jesus
+</h2>
+
+<p>
+Rest within the assurance of God’s faithfulness, finding peace, confidence, and hope through relationship with Jesus.
+</p>
+
+<a href="chapter10.html" class="chapter-btn">
+Read Chapter →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>
