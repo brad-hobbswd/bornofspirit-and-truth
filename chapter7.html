@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 7 | Born of the Spirit and Truth</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== RESET ===== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* ===== BODY ===== */
+
+body{
+background:#0f0f0f;
+font-family:'Inter',sans-serif;
+color:#f5f5f5;
+overflow-x:hidden;
+line-height:2;
+}
+
+/* ===== BACKGROUND ===== */
+
+.background{
+position:fixed;
+inset:0;
+background:
+linear-gradient(rgba(8,8,8,.88),rgba(8,8,8,.94)),
+url('banner.jpg') center center/cover no-repeat;
+z-index:-2;
+}
+
+.background::after{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at top left,rgba(240,215,166,.10),transparent 35%),
+radial-gradient(circle at bottom right,rgba(255,255,255,.04),transparent 40%);
+}
+
+/* ===== PROGRESS ===== */
+
+.progress-wrap{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:3px;
+z-index:2000;
+}
+
+.progress-bar{
+height:100%;
+width:0%;
+background:#f0d7a6;
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:1.2rem 3rem;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(18px);
+background:rgba(15,15,15,.18);
+border-bottom:1px solid rgba(255,255,255,.08);
+z-index:999;
+}
+
+.logo{
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+font-weight:600;
+letter-spacing:.05em;
+color:#fff;
+}
+
+.nav-links{
+display:flex;
+gap:2rem;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#f5f5f5;
+font-size:.92rem;
+letter-spacing:.08em;
+font-weight:300;
+transition:.3s ease;
+}
+
+.nav-links a:hover{
+opacity:.7;
+}
+
+/* ===== PAGE ===== */
+
+.page{
+padding:10rem 2rem 6rem;
+}
+
+/* ===== HERO ===== */
+
+.chapter-hero{
+max-width:950px;
+margin:auto;
+text-align:center;
+margin-bottom:6rem;
+animation:fadeUp 1.2s ease;
+}
+
+.chapter-label{
+display:inline-block;
+margin-bottom:1rem;
+font-size:.8rem;
+letter-spacing:.3em;
+color:#f0d7a6;
+font-weight:500;
+}
+
+.chapter-hero h1{
+font-family:'Cormorant Garamond',serif;
+font-size:5rem;
+font-weight:500;
+line-height:1;
+margin-bottom:2rem;
+}
+
+.chapter-subtitle{
+font-size:1rem;
+letter-spacing:.12em;
+color:rgba(255,255,255,.7);
+}
+
+/* ===== CONTENT ===== */
+
+.content{
+max-width:860px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:2.4rem;
+animation:fadeUp 1.5s ease;
+}
+
+.content p{
+font-size:1.05rem;
+font-weight:300;
+line-height:2.2;
+color:rgba(255,255,255,.94);
+}
+
+/* ===== SCRIPTURE BLOCK ===== */
+
+.scripture{
+margin:1rem 0;
+padding:2.5rem;
+border-radius:28px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
+text-align:center;
+}
+
+.scripture span{
+display:block;
+margin-bottom:1rem;
+font-size:.82rem;
+letter-spacing:.25em;
+color:#f0d7a6;
+}
+
+.scripture p{
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+line-height:1.6;
+color:#fff;
+}
+
+/* ===== NAVIGATION ===== */
+
+.chapter-navigation{
+margin-top:5rem;
+display:flex;
+justify-content:space-between;
+gap:1rem;
+flex-wrap:wrap;
+}
+
+.chapter-btn{
+padding:1rem 2rem;
+border-radius:50px;
+text-decoration:none;
+font-size:.92rem;
+letter-spacing:.08em;
+transition:.35s ease;
+}
+
+.btn-secondary{
+border:1px solid rgba(255,255,255,.25);
+color:#fff;
+background:rgba(255,255,255,.04);
+}
+
+.btn-secondary:hover{
+background:rgba(255,255,255,.1);
+}
+
+.btn-primary{
+background:#f0d7a6;
+color:#111;
+}
+
+.btn-primary:hover{
+background:#fff;
+transform:translateY(-2px);
+}
+
+/* ===== ANIMATION ===== */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:900px){
+
+.navbar{
+padding:1rem 1.5rem;
+}
+
+.nav-links{
+display:none;
+}
+
+.page{
+padding:8rem 1.5rem 5rem;
+}
+
+.chapter-hero h1{
+font-size:3.5rem;
+}
+
+.content p{
+font-size:1rem;
+line-height:2;
+}
+
+.scripture p{
+font-size:1.5rem;
+}
+
+}
+
+@media(max-width:600px){
+
+.chapter-hero h1{
+font-size:2.7rem;
+}
+
+.scripture{
+padding:2rem 1.5rem;
+}
+
+.scripture p{
+font-size:1.25rem;
+line-height:1.8;
+}
+
+.chapter-navigation{
+flex-direction:column;
+}
+
+.chapter-btn{
+width:100%;
+text-align:center;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- ===== PROGRESS ===== -->
+
+<div class="progress-wrap">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+
+<!-- ===== BACKGROUND ===== -->
+
+<div class="background"></div>
+
+<!-- ===== NAVBAR ===== -->
+
+<nav class="navbar">
+
+<div class="logo">
+Born of the Spirit and Truth
+</div>
+
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="purpose.html">Purpose</a>
+<a href="chapters.html">Chapters</a>
+<a href="reflection.html">Reflection</a>
+</div>
+
+</nav>
+
+<!-- ===== PAGE ===== -->
+
+<section class="page">
+
+<!-- ===== HERO ===== -->
+
+<div class="chapter-hero">
+
+<span class="chapter-label">
+CHAPTER 7
+</span>
+
+<h1>
+Daily Life Filled With the Holy Ghost
+</h1>
+
+<div class="chapter-subtitle">
+The Spirit transforms ordinary daily life into continual relationship with Jesus.
+</div>
+
+</div>
+
+<!-- ===== CONTENT ===== -->
+
+<div class="content">
+
+<p>
+Life filled with the Holy Ghost unfolds as living relationship rather than isolated spiritual moment. Acts records powerful outpourings of the Spirit, though Scripture also reveals daily transformation shaped through continual communion with Jesus. The Spirit who enters through promise continues working through ongoing presence, guidance, renewal, and intimacy.
+</p>
+
+<p>
+The Holy Ghost shapes thought, desire, response, and perspective. Awareness of God’s nearness begins influencing ordinary decisions, conversations, reactions, and priorities. Prayer becomes conversation rather than ritual while Scripture opens with greater clarity, warmth, and personal meaning.
+</p>
+
+<div class="scripture">
+
+<span>
+SPIRITUAL FOUNDATION
+</span>
+
+<p>
+Romans 8:14 reveals that those led by the Spirit of God are the sons of God.
+</p>
+
+</div>
+
+<p>
+The Spirit leads gently yet faithfully through peace, conviction, wisdom, and alignment with Scripture. Guidance develops through relationship rather than pressure. Obedience grows naturally through trust rather than fear driven obligation.
+</p>
+
+<p>
+Daily Spirit filled living increases sensitivity toward God’s voice. Stillness gains meaning. Silence creates space for listening. Spiritual awareness sharpens discernment while prayerful reflection brings clarity concerning decisions and direction.
+</p>
+
+<p>
+The Holy Ghost also transforms character. Love expands beyond natural limitations. Patience develops through surrender. Humility grows through awareness of dependence upon Jesus. Compassion deepens toward others through personal understanding of grace and mercy.
+</p>
+
+<p>
+Spiritual language such as praying in tongues strengthens personal edification and deepens communion with God. Scripture presents tongues as one beautiful expression of the Spirit’s ongoing work within the believer. Relationship with Jesus remains central above every spiritual manifestation.
+</p>
+
+<p>
+Many believers experience seasons where spiritual emotion feels quieter than previous moments. Quiet seasons never indicate absence of the Spirit. Growth often develops beneath the surface through perseverance, trust, and faithful obedience. Spiritual maturity deepens through confidence rooted in relationship rather than emotional intensity alone.
+</p>
+
+<p>
+Daily Spirit filled life also reshapes identity. Believers no longer define worth through past failures, shame, or external approval. Identity becomes anchored within relationship with Jesus. Confidence grows through belonging rather than performance.
+</p>
+
+<p>
+Community strengthens Spirit led living. Fellowship encourages perseverance while worship renews focus upon God’s presence. Shared testimony strengthens faith while accountability nurtures spiritual growth and maturity. The Spirit works powerfully through both personal devotion and collective unity among believers.
+</p>
+
+<p>
+Spiritual growth continues throughout life. Revelation unfolds gradually through Scripture, prayer, obedience, and reflection. The Spirit patiently leads believers according to grace, wisdom, and divine timing.
+</p>
+
+<p>
+This chapter emphasizes that Spirit filled living produces stability rather than pressure. Jesus supplies strength while grace sustains growth. Availability matters more than perfection because relationship remains central throughout the journey.
+</p>
+
+<p>
+The Holy Ghost remains God’s gift for every believer. Presence accompanies every step while guidance illuminates every path. Through daily surrender, ordinary life becomes sacred through continual awareness of Jesus living within.
+</p>
+
+<!-- ===== NAVIGATION ===== -->
+
+<div class="chapter-navigation">
+
+<a href="chapter6.html" class="chapter-btn btn-secondary">
+← Previous Chapter
+</a>
+
+<a href="chapter8.html" class="chapter-btn btn-primary">
+Next Chapter →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== SCRIPT ===== -->
+
+<script>
+
+window.addEventListener('scroll', () => {
+
+const scrollTop = document.documentElement.scrollTop;
+const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+const progress = (scrollTop / scrollHeight) * 100;
+
+document.getElementById('progressBar').style.width = progress + '%';
+
+});
+
+</script>
+
+</body>
+</html>
